@@ -16,7 +16,7 @@ public class StorageManager {
         switch (dataSource) {
             case MySQL:
                 ConfigurationSection storageSection = plugin.getConfig().getConfigurationSection("storage");
-                SQLCredentials credentials = new SQLCredentials.Builder() //TODO get credentials from config
+                SQLCredentials credentials = new SQLCredentials.Builder()
                         .userName(storageSection.getString("username"))
                         .password(storageSection.getString("password"))
                         .database(storageSection.getString("database"))
