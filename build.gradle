@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'io.github.osmanfurkan115'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT'
+    implementation 'com.zaxxer:HikariCP:4.0.3'
+}
+
+shadowJar {
+    archiveFileName.set(String.format("%s v%s.jar", rootProject.name, rootProject.version))
+}
