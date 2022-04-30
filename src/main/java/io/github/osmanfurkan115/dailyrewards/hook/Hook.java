@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 
 import java.util.logging.Logger;
 
-class Hook {
+public class Hook {
     private final String pluginName;
     private final boolean required;
     private final boolean enabled;

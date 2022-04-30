@@ -1,6 +1,6 @@
 package io.github.osmanfurkan115.dailyrewards.reward.type;
 
-import io.github.osmanfurkan115.dailyrewards.reward.parser.RewardParser;
+import io.github.osmanfurkan115.dailyrewards.parser.RewardParser;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;

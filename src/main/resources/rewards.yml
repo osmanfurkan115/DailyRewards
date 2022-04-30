@@ -1,0 +1,15 @@
+dailyrewards:
+  1:
+    day: 1 # First day
+    rewards:
+      permission: 'spigot.tps' # Permission to grant
+      command: 'tell %player% You have been rewarded for being awesome!' # Command to execute
+
+  2:
+    day: 2
+    rewards:
+      items:
+        diamond:
+          type: 'DIAMOND_BLOCK'
+          amount: 1
+

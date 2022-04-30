@@ -18,6 +18,10 @@ public class User {
         this.nextReward = nextReward;
     }
 
+    public boolean canTakeReward() {
+        return System.currentTimeMillis() >= nextReward;
+    }
+
     public UUID getUUID() {
         return uuid;
     }

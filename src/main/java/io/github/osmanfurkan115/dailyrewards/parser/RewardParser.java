@@ -1,4 +1,4 @@
-package io.github.osmanfurkan115.dailyrewards.reward.parser;
+package io.github.osmanfurkan115.dailyrewards.parser;
 
 import org.bukkit.configuration.ConfigurationSection;
 

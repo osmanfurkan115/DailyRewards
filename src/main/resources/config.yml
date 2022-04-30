@@ -1,2 +1,7 @@
 storage:
-  type: 'SQLite' #Types: MySQL, Mongo, SQLite
+  type: 'SQLite' #Types: MySQL, SQLite
+  username: 'root'
+  password: 'root'
+  host: 'localhost'
+  port: '3306'
+  database: 'rewards'
