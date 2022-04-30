@@ -5,9 +5,6 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
 public class PermissionReward extends Reward implements RewardParser<PermissionReward> {
     private final JavaPlugin plugin;
     private final String permission;
