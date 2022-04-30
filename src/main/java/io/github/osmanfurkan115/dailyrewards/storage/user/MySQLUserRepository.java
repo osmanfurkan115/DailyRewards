@@ -108,6 +108,18 @@ public class MySQLUserRepository implements UserRepository {
     }
 
     @Override
+    public void delete(UUID uuid) {
+        runAsync(() -> {
+            try (Statement statement = getConnection().createStatement()) {
+                String sqlQuery = String.format("DELETE FROM %s WHERE uuid = '%s'", TABLE_NAME, uuid.toString());
+                statement.execute(sqlQuery);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @Override
     public CompletableFuture<List<User>> findUserByDay(int day) {
         return supplyAsync(() -> {
             try (Statement statement = getConnection().createStatement()) {

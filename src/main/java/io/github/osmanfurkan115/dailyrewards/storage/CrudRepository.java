@@ -15,4 +15,6 @@ public interface CrudRepository<T, ID> {
     void save(T data);
 
     void saveAll(List<T> data);
+
+    void delete(ID id);
 }

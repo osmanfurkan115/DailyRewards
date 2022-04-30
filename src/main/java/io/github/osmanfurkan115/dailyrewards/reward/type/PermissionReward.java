@@ -31,7 +31,7 @@ public class PermissionReward extends Reward implements RewardParser<PermissionR
     @Override
     public PermissionReward parse(ConfigurationSection section) {
         String permissionValue = section.getString("permission");
-        if (permissionValue == null) throw new IllegalArgumentException("PermissionReward must have a permission value");
+        if (permissionValue == null) throw new IllegalArgumentException("permission section is missing");
         return new PermissionReward(plugin, permissionValue);
     }
 }
