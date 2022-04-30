@@ -1,5 +1,6 @@
-package io.github.osmanfurkan115.dailyrewards.hook;
+package io.github.osmanfurkan115.dailyrewards.hook.vault;
 
+import io.github.osmanfurkan115.dailyrewards.hook.Hook;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;

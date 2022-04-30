@@ -1,0 +1,8 @@
+dailyreward:
+  size: 54
+  title: '&6Daily Reward'
+  items:
+    reward-item:
+      type: EMERALD
+      name: '&aDay &b%day%'
+      amount: 1

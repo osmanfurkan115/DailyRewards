@@ -1,8 +1,9 @@
 package io.github.osmanfurkan115.dailyrewards;
 
 import io.github.osmanfurkan115.dailyrewards.configuration.Yaml;
-import io.github.osmanfurkan115.dailyrewards.hook.VaultHook;
+import io.github.osmanfurkan115.dailyrewards.hook.vault.VaultHook;
 import io.github.osmanfurkan115.dailyrewards.hook.placeholderapi.PlaceholderAPIHook;
+import io.github.osmanfurkan115.dailyrewards.menu.listener.MenuListener;
 import io.github.osmanfurkan115.dailyrewards.reward.RewardManager;
 import io.github.osmanfurkan115.dailyrewards.storage.DataSource;
 import io.github.osmanfurkan115.dailyrewards.storage.StorageManager;
@@ -17,6 +18,7 @@ public final class DailyRewardsPlugin extends JavaPlugin {
     private VaultHook vaultHook;
     private final PlaceholderAPIHook placeholderAPIHook = new PlaceholderAPIHook(this);
 
+    private final Yaml menu = new Yaml(this, "menu.yml");
     private final Yaml rewards = new Yaml(this, "rewards.yml");
 
     @Override
@@ -25,6 +27,8 @@ public final class DailyRewardsPlugin extends JavaPlugin {
 
         vaultHook = new VaultHook();
         placeholderAPIHook.initialize();
+
+        getServer().getPluginManager().registerEvents(new MenuListener(), this);
     }
 
     public RewardManager getRewardManager() {
@@ -41,6 +45,14 @@ public final class DailyRewardsPlugin extends JavaPlugin {
 
     public VaultHook getVaultHook() {
         return vaultHook;
+    }
+
+    public PlaceholderAPIHook getPlaceholderAPIHook() {
+        return placeholderAPIHook;
+    }
+
+    public Yaml getMenu() {
+        return menu;
     }
 
     public Yaml getRewards() {

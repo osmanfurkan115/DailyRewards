@@ -2,8 +2,7 @@ package io.github.osmanfurkan115.dailyrewards.storage;
 
 public enum DataSource {
     MySQL,
-    SQLite,
-    MongoDB;
+    SQLite;
 
     public static DataSource getDataSourceByName(String name) {
         for (DataSource dataSource : values()) {
