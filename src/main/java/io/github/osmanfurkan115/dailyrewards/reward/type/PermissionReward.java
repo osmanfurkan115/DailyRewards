@@ -1,11 +1,11 @@
 package io.github.osmanfurkan115.dailyrewards.reward.type;
 
-import io.github.osmanfurkan115.dailyrewards.parser.RewardParser;
+import io.github.osmanfurkan115.dailyrewards.parser.ConfigParser;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class PermissionReward extends Reward implements RewardParser<PermissionReward> {
+public class PermissionReward extends Reward implements ConfigParser<PermissionReward> {
     private final JavaPlugin plugin;
     private final String permission;
 

@@ -18,29 +18,29 @@ public class MenuListener implements Listener {
     private final MenuProvider menuProvider = MenuProvider.getInstance();
 
     @EventHandler
-    public void onInventoryClick(InventoryClickEvent e) {
-        HumanEntity whoClicked = e.getWhoClicked();
+    public void onInventoryClick(InventoryClickEvent event) {
+        HumanEntity whoClicked = event.getWhoClicked();
 
-        if (e.getClick().equals(ClickType.UNKNOWN)) return;
-        if (e.getClickedInventory() == null || e.getClickedInventory().equals(whoClicked.getInventory())) return;
+        if (event.getClick().equals(ClickType.UNKNOWN)) return;
+        if (event.getClickedInventory() == null || event.getClickedInventory().equals(whoClicked.getInventory())) return;
         if (!isOnMenu(whoClicked.getUniqueId())) return;
-        e.setCancelled(true);
+        event.setCancelled(true);
 
         Menu menu = menuProvider.getMenu(whoClicked.getUniqueId());
-        MenuItem item = menu.getItem(e.getSlot());
+        MenuItem item = menu.getItem(event.getSlot());
 
         if (item == null) return;
-        item.getClickAction().accept(e);
+        item.getClickAction().accept(event);
     }
 
     @EventHandler
-    public void onInventoryClose(InventoryCloseEvent e) {
-        Player player = (Player) e.getPlayer();
+    public void onInventoryClose(InventoryCloseEvent event) {
+        Player player = (Player) event.getPlayer();
         if (!isOnMenu(player.getUniqueId())) return;
 
         Menu menu = menuProvider.getMenu(player.getUniqueId());
         if (menu.isCloseable()) {
-            menuProvider.removeUUID(e.getPlayer().getUniqueId());
+            menuProvider.removeUUID(event.getPlayer().getUniqueId());
         } else {
             menu.open(player);
         }

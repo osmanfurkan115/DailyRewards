@@ -1,6 +1,6 @@
 package io.github.osmanfurkan115.dailyrewards.reward.type;
 
-import io.github.osmanfurkan115.dailyrewards.parser.RewardParser;
+import io.github.osmanfurkan115.dailyrewards.parser.ConfigParser;
 import io.github.osmanfurkan115.dailyrewards.util.ItemBuilder;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -9,7 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemReward extends Reward implements RewardParser<ItemReward> {
+public class ItemReward extends Reward implements ConfigParser<ItemReward> {
     private final List<ItemStack> items;
 
     public ItemReward(ConfigurationSection section) {

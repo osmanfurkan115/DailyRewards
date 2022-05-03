@@ -1,11 +1,11 @@
 package io.github.osmanfurkan115.dailyrewards.reward.type;
 
 import io.github.osmanfurkan115.dailyrewards.DailyRewardsPlugin;
-import io.github.osmanfurkan115.dailyrewards.parser.RewardParser;
+import io.github.osmanfurkan115.dailyrewards.parser.ConfigParser;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
-public class MoneyReward extends Reward implements RewardParser<MoneyReward> {
+public class MoneyReward extends Reward implements ConfigParser<MoneyReward> {
     private final DailyRewardsPlugin plugin;
     private final double amount;
 

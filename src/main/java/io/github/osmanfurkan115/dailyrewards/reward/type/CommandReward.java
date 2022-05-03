@@ -1,13 +1,13 @@
 package io.github.osmanfurkan115.dailyrewards.reward.type;
 
-import io.github.osmanfurkan115.dailyrewards.parser.RewardParser;
+import io.github.osmanfurkan115.dailyrewards.parser.ConfigParser;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
 import java.util.List;
 
-public class CommandReward extends Reward implements RewardParser<CommandReward> {
+public class CommandReward extends Reward implements ConfigParser<CommandReward> {
     private final List<String> commands;
 
     public CommandReward(ConfigurationSection section) {
